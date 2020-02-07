@@ -3,10 +3,68 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <header>
+        {% block header %}
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-2">
+                        <img src="assets/img/bonsai.png" alt="logo" style="width:200px;">
+                    </div>
+                    <div class="col-10">
+                        <h1 class="site-heading text-center text-white d-none d-lg-block">
+                            <span class="site-heading-lower" style="color:green;">Petit arbre Landais</span>
+                            <span class="site-heading-upper text-primary mb-3" style="color:grey!important;">--- l'art du bonsaï ---</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        </header>
+        <main>
+
+            {% block menutop %}
+                <div class="container">
+                    {{ render(controller('App\\Controller\\PublicController::menu')) }}
+                </div>
+            {% endblock %}
+            <section class="container">
+                {% block body %}
+
+                {% endblock %}
+            </section>
+
+        </main>
+
+        <footer class="footer text-faded text-center py-3">
+            {% block footer %}
+                <div class="container">
+                    <div class="mb-2">
+                        <a href="propos.php">A propos</a>
+                        <a href="contact.php">Contact</a>
+                        <span>&copy; Petit arbre Landais 2019 - Philippe Favero</span>
+                    </div>
+                    <div>
+                        <img src="assets/img/bonsai.png" class="ui centered image" style="width:5em;">
+                    </div>
+                    <div>
+                        <a class="nav-link text-uppercase text-expanded" href="admin/login.php">Connexion</a>
+                    </div>
+                </div>
+            {% endblock %}
+        </footer>
+
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        {% endblock %}
     </body>
 </html>
+
+<body>

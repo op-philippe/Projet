@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page.titre }}{% endblock %}
+
+{% block menutop %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h1>{{ page.titre }}</h1>
+        </div>
+    </div>
+    {{ render(controller(
+        'App\\Controller\\PublicController::List_articles_page',
+        { 'page': page.id }
+    )) }}    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+
+{% endblock %}

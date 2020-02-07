@@ -1,0 +1,29 @@
+{% if articles is null %}
+    <h1>Pas d'articles sur la page</h1>
+{% else %}
+    {% for article in articles %}
+        <h1>Article</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ article.picture }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+{% endif %}
+
