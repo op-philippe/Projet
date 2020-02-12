@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Page
  *
  * @ORM\Table(name="page")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\PageRepository")
  */
 class Page
 {
@@ -55,6 +55,11 @@ class Page
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
      */
     private $updateAt;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isMenu;
 
     public function getId(): ?int
     {
@@ -123,6 +128,18 @@ class Page
 
     public function __toString() {
         return $this->titre;
+    }
+
+    public function getIsMenu(): ?bool
+    {
+        return $this->isMenu;
+    }
+
+    public function setIsMenu(?bool $isMenu): self
+    {
+        $this->isMenu = $isMenu;
+
+        return $this;
     }
 
 

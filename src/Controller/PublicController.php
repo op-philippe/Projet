@@ -29,7 +29,7 @@ class PublicController extends AbstractController
     {
         $pages = $this->getDoctrine()
             ->getRepository(Page::class)
-            ->findAll();
+            ->isMenu();
 
         return $this->render('public/menu.html.twig',
             ['pages'=> $pages]

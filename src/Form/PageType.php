@@ -15,6 +15,7 @@ class PageType extends AbstractType
             ->add('titre')
             ->add('slug')
             ->add('isPublish')
+            ->add('isMenu')
             ->add('createAt')
             ->add('updateAt')
         ;

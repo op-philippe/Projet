@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
-                <td>{{ article.content }}</td>
+                <td>{{ article.content|raw }}</td>
                 <td>{{ article.picture }}</td>
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}">Voir</a>

@@ -115,6 +115,8 @@
       <path value="$PROJECT_DIR$/vendor/business-casual/img" />
       <path value="$PROJECT_DIR$/vendor/business-casual/scss" />
       <path value="$PROJECT_DIR$/vendor/business-casual/vendor" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

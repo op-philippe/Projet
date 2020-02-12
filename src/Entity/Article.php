@@ -31,13 +31,6 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255, nullable=false)
-     */
-    private $content;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="picture", type="string", length=255, nullable=false)
      */
     private $picture;
@@ -52,6 +45,11 @@ class Article
      */
     private $page;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -65,18 +63,6 @@ class Article
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content): self
-    {
-        $this->content = $content;
 
         return $this;
     }
@@ -107,6 +93,18 @@ class Article
 
     public function __toString() {
         return $this->title;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
     }
 
 

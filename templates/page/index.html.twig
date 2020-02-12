@@ -2,6 +2,10 @@
 
 {% block title %}Pages{% endblock %}
 
+{% block header %}
+   {{ parent() }}
+{% endblock %}
+
 {% block content %}
     <h1>Gestion des pages</h1>
 
@@ -12,6 +16,7 @@
                 <th>Titre</th>
                 <th>Slug</th>
                 <th>IsPublish</th>
+                <th>IsMenu</th>
                 <th>CreateAt</th>
                 <th>UpdateAt</th>
                 <th></th>
@@ -24,6 +29,7 @@
                 <td>{{ page.titre }}</td>
                 <td>{{ page.slug }}</td>
                 <td>{{ page.isPublish ? 'Oui' : 'Non' }}</td>
+                <td>{{ page.isMenu ? 'Oui' : 'Non' }}</td>
                 <td>{{ page.createAt ? page.createAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ page.updateAt ? page.updateAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
@@ -40,4 +46,8 @@
     </table>
 
     <a href="{{ path('page_new') }}">Créer une page</a>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
 {% endblock %}
