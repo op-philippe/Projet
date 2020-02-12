@@ -7,18 +7,22 @@
 {% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col">
-            <h1>{{ page.titre }}</h1>
-        </div>
-    </div>
-    {{ render(controller(
-        'App\\Controller\\PublicController::List_articles_page',
-        { 'page': page.id }
-    )) }}
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <div class="intro2">
+                    <img class="intro2-img img-fluid mb-3 mb-lg-0 rounded" src="business-casual/img/quatre.jpg" alt="bonsai">
+                    <div class="intro2-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">{{ page.titre }}</span>
+                        </h2>
 
+                        {{ render(controller('App\\Controller\\PublicController::List_articles_page', { 'page': page.id })) }}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

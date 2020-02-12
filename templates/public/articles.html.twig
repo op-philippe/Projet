@@ -2,11 +2,10 @@
     <h1>Pas d'articles sur la page</h1>
 {% else %}
     {% for article in articles %}
-        <section>
-            <h3>{{ article.title }}</h3>
-            <article>{{ article.content|raw }}
+            <article>
+                <h3>{{ article.title }}</h3>
+                {{ article.content|raw }}
             </article>
-        </section>
     {% endfor %}
 {% endif %}
 
