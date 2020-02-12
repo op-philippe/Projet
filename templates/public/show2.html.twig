@@ -14,7 +14,7 @@
                     <img class="intro2-img img-fluid mb-3 mb-lg-0 rounded" src="business-casual/img/quatre.jpg" alt="bonsai">
                     <div class="intro2-text left-0 text-center bg-faded p-5 rounded">
                         <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">{{ page.titre }}</span>
+                            <span class="section-heading-upper" style="font-size: 2rem">{{ page.titre }}</span>
                         </h2>
 
                         {{ render(controller('App\\Controller\\PublicController::List_articles_page', { 'page': page.id })) }}
