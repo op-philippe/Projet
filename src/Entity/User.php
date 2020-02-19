@@ -34,7 +34,7 @@ class User implements UserInterface
      *
      * @ORM\Column(name="roles", type="json", nullable=false)
      */
-    private $roles;
+    private $roles = [];
 
     /**
      * @var string
@@ -74,10 +74,15 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRoles(): ?int
+        public function getRoles(): array
     {
-        return $this->roles;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
+
 
     public function setRoles(int $roles): self
     {
