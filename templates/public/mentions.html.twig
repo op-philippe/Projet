@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script> <script> grecaptcha.ready(function() { grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) { ... }); }); </script>
+{% endblock %}
+
+{% block menutop %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <div class="intro2">
+                    <div class="intro2-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper" style="font-size: 2rem">Mentions légales</span>
+                        </h2>
+                        <p>Nom de l’association : Petit Arbre Landais</p>
+                        <p>Auteur du site : Favero Philippe</p>
+                        <p>Adresse : Maison Joelle  Vincens - rue Martin Luther King - 40000 Mont de Marsan</p>
+                        <p>Numéro de téléphone : 06 77 60 90 13</p>
+                        <p>Président de l’association : Miens Thierry</p>
+                        <p>Hébergeur : OVH</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

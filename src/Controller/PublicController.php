@@ -33,6 +33,16 @@ class PublicController extends AbstractController
     }
 
     /**
+     * @Route("/mentions_megales", name="public_mentions")
+     */
+    public function mentions()
+    {
+        return $this->render('public/mentions.html.twig', [
+            'controller_name' => 'PublicController',
+        ]);
+    }
+
+    /**
      * @Route("/public/menu", name="public_menu")
      */
     public function menu()
