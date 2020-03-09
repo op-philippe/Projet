@@ -43,7 +43,7 @@ class UserController extends AbstractController
             $plainPassword = $form->get('password')->getData();
             $encoded = $encoder->encodePassword($user, $plainPassword);
             $user->setPassword($encoded);
-            $user->setRoles('ROLE_USER');
+            $user->setRoles(array('ROLE_USER'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
