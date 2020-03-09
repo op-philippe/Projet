@@ -4,24 +4,25 @@
 
 {% block content %}
     <h1>Gestion des utilisateurs</h1>
-
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Roles</th>
                 <th>Prénom</th>
                 <th>Nom</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
+        {% for user in users %} {# Boucle qui parcourt tous les utilisateurs #}
             <tr>
-                <td>{{ user.id }}</td>
+                <td>{{ user.id }}</td> {# Insertion de l'id user dans le champ du tableau #}
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td>
+                <td>{{ user.roles }}</td>
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
                 <td>
